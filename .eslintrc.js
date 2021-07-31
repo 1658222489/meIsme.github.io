@@ -11,14 +11,23 @@ module.exports = {
     parser: 'babel-eslint'
   },
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
+      // allow async-await
+      'generator-star-spacing': 'off',
+      // allow debugger during development
+      'vue/no-parsing-error': [2, {
+          'x-invalid-end-tag': false
+      }],
+      'no-undef': 'off',
+      'camelcase': 'off',
+      'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+      'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
   },
   overrides: [
     {
       files: [
         '**/__tests__/*.{j,t}s?(x)',
-        '**/tests/unit/**/*.spec.{j,t}s?(x)'
+        '**/tests/unit/**/*.spec.{j,t}s?(x)',
+        '**/store/'
       ],
       env: {
         jest: true

@@ -1,25 +1,23 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+import Routes from '@/router/routers/index.js';
+const routes = Routes;
 
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
-
+console.log(routes);
 const router = createRouter({
+    /**
+     * hash模式：createWebHashHistory，
+     * history模式：createWebHistory
+     */
   history: createWebHistory(process.env.BASE_URL),
   routes
-})
+});
+
+router.beforeEach((to,from,next) => {
+    if(to.path === 'login') return next();
+    // const userInfo = sessionStorage.getItem('token');
+    const userInfo = '123456';
+    if(!userInfo) return next('login');
+    next()
+});
 
 export default router
