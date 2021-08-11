@@ -22,7 +22,6 @@ export default {
            store.dispatch('userLogin',{name:data.userName,sex:'男'})
        };
        onMounted(() =>{
-           console.log(data.userName);
        });
         return {
            login,

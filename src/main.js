@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router'
+import router from './router/index'
 import store from './store'
 import ElementPlus from 'element-plus';         //引入elementPLus
 import 'element-plus/lib/theme-chalk/index.css';//elementPlus的css
@@ -11,10 +11,9 @@ import config from '@/config';
 //创建app
 const app = createApp(App);
 app.config.globalProperties = config;
-// console.log(app.config.globalProperties);
 app.use(store)
     .use(router)
     .use(ElementPlus)
     .use(VueAxios, axios)
     .mount('#app');
-export default app;
+export default app

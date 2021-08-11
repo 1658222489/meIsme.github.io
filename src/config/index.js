@@ -12,9 +12,9 @@ export default {
    * @description api请求基础路径
    */
   baseUrl: {
-     dev: 'http://localhost:8180/', // 我的主机
+     dev: 'http://localhost:8080/', // 我的主机
 
-     pro: '/'
+     pro: '/'//线上服务器地址
   },
   /**
    * @description 默认打开的首页的路由name值，默认为home

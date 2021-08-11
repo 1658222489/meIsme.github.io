@@ -1,15 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Routes from '@/router/routers/index.js';
+import Routes from '@/router/routers';
 const routes = Routes;
 
-console.log(routes);
 const router = createRouter({
     /**
      * hash模式：createWebHashHistory，
      * history模式：createWebHistory
      */
-  history: createWebHistory(process.env.BASE_URL),
-  routes
+  history: createWebHistory(),
+  // history: createWebHashHistory(),
+  routes:routes,
 });
 
 router.beforeEach((to,from,next) => {

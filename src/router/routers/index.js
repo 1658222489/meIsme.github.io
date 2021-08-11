@@ -13,7 +13,7 @@
 const Routes = [
     {
         path: '/',
-        redirect: '/index',
+        redirect: '/home',
         isShow: false
     },
     {
@@ -23,43 +23,41 @@ const Routes = [
         component: () => import('@/components/login/login.vue'),
     },
     {
-        path: '/index',
+        path: '/home',
         name: '首页',
         isShow: false,
         meta: {icon: 'el-icon-s-order'},
-        component: () => import('@/components/index.vue'),
+        component:()=>import('@/components/index.vue'),
+        redirect:'/home/index',
         children:[
             {
-                path: '/system',
-                name: '系统管理',
-                isShow: true,
+                path: '/home/index',
+                isShow: false,
                 icon: 'el-icon-s-home',
-                children:[
-                    {
-                        path: '/user',
-                        name: '用户管理',
-                        isShow: true,
-                        icon: 'el-icon-s-home',
-                        component: () => import('@/views/system/user.vue')
-                    },
-                ]
+                component: () => import('@/views/home.vue'),
             },
-
+        ]
+    },
+    {
+        path: '/system',
+        name: '系统管理',
+        isShow: true,
+        icon: 'el-icon-s-home',
+        component:()=>import('@/components/index.vue'),
+        children:[
             {
-                path: '/doc',
+                path: '/system/user',
+                name: '用户管理',
+                isShow: true,
+                icon: 'el-icon-user',
+                component: () => import('@/views/system/user.vue')
+            },
+            {
+                path: '/system/doc',
                 name: '文档',
                 isShow: true,
                 icon: 'el-icon-s-order',
                 component: () => import('@/views/system/About.vue'),
-
-
-            },
-            {
-                path: '/home',
-                name: '测试',
-                isShow: true,
-                icon: 'el-icon-s-order',
-                component: () => import('@/views/system/Home.vue'),
             },
         ]
     },
