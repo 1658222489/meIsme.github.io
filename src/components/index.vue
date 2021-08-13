@@ -25,15 +25,9 @@
         },
         components: {
             Sidebar,
-            // Wrapper,
             Header
         }
     };
 </script>
 <style lang="less" scoped>
-    .el-menu-vertical-demo:not(.el-menu--collapse) {
-        width: 200px;
-        min-height: 400px;
-    }
-
 </style>

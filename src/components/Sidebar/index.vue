@@ -5,13 +5,12 @@
     </div>
   </el-affix>
   <el-menu
-    :default-active="$route.path"
+    :default-active="route.path"
     class="el-menu-vertical-demo"
     active-text-color="#ffd04b"
     background-color="#545c64"
     text-color="#fff"
     :unique-opened="true"
-    @open="handleOpen"
     router>
     <template v-for="(item,index) in routers" :key="index">
       <el-submenu v-if="item.children && item.children.length > 0 && item.isShow" :index="item.path">
@@ -35,16 +34,15 @@
 
 <script>
     import {reactive, onMounted, toRefs} from 'vue'
-    import {useRouter} from 'vue-router'
+    import {useRouter,useRoute} from 'vue-router'
     export default {
         setup() {
             const routers = useRouter();
             const data = reactive({
-                routers: [],
-                routerValue: '',
+                routers:routers.options.routes,
+                route: useRoute(),
             });
             const gotoHome = () => {
-                console.log(routers);
                 routers.push({
                     path:'/home'
                 });
@@ -53,7 +51,7 @@
                 console.log(key, keyPath);
             };
             onMounted(() => {
-                data.routers = routers.options.routes;
+
                 },
             );
             return {

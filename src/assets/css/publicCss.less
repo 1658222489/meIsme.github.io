@@ -1,0 +1,39 @@
+//flex布局
+.displayFlex {
+    display: flex;
+}
+//flexColumn布局
+.displayColumn {
+    .displayFlex();
+    flex-direction: column;
+}
+//反向flexColumn布局
+.displayColumnReverse {
+    .displayFlex();
+    flex-direction: column-reverse;
+}
+//反向flexRow布局
+.displayRowReverse {
+    .displayFlex();
+    flex-direction: row-reverse;
+}
+//flex垂直居中布局
+.displayAlignCenter{
+    .displayFlex();
+    align-items: center;
+}
+//flex水平、垂直居中布局
+.displayAlignJustifyCenter{
+    .displayAlignCenter();
+    justify-content: center;
+}
+//flex两边对齐，垂直居中布局
+.displayAlignJustify{
+    .displayAlignCenter();
+    justify-content: space-between;
+}
+//flex两边环绕，垂直居中布局
+.displayAlignJustifyAround{
+    .displayAlignCenter();
+    justify-content: space-around;
+}

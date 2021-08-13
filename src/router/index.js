@@ -8,7 +8,6 @@ const router = createRouter({
      * history模式：createWebHistory
      */
   history: createWebHistory(),
-  // history: createWebHashHistory(),
   routes:routes,
 });
 
