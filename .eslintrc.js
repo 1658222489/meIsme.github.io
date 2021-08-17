@@ -27,11 +27,14 @@ module.exports = {
       files: [
         '**/__tests__/*.{j,t}s?(x)',
         '**/tests/unit/**/*.spec.{j,t}s?(x)',
-        '**/store/'
+        '**/src/store/**',
       ],
+        rules:{
+            "no-unused-vars": "off",
+        },
       env: {
         jest: true
       }
     }
   ]
-}
+};

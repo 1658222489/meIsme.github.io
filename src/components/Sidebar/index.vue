@@ -1,4 +1,5 @@
 <template>
+<!--    导航栏的顶部-->
   <el-affix class="el-affix-Cursor" :z-index="1200" style="" @click="gotoHome">
     <div>
       <span>vue3练习</span>
@@ -12,27 +13,13 @@
     text-color="#fff"
     :unique-opened="true"
     router>
-    <template v-for="(item,index) in routers" :key="index">
-      <el-submenu v-if="item.children && item.children.length > 0 && item.isShow" :index="item.path">
-        <template #title>
-          <i :class="item.icon"></i>
-          <span>{{item.name}}</span>
-        </template>
-        <el-menu-item v-for="child in item.children" :key="child" :index="child.path">
-          <i :class="child.icon"></i>
-          <template #title>
-            {{child.name}}
-          </template>
-        </el-menu-item>
-      </el-submenu>
-      <el-menu-item v-else-if="item.isShow" :index="item.path">
-        <span>{{item.name}}</span>
-      </el-menu-item>
-    </template>
+<!--      导航组件-->
+      <Sidebar :routerList="routers"></Sidebar>
   </el-menu>
 </template>
 
 <script>
+    import Sidebar from '@/components/Sidebar/sidebar.vue'
     import {reactive, onMounted, toRefs} from 'vue'
     import {useRouter,useRoute} from 'vue-router'
     export default {
@@ -60,6 +47,9 @@
                 ...toRefs(data)
             };
         },
+        components:{
+            Sidebar
+        }
     };
 </script>
 <style lang="less" scoped>
