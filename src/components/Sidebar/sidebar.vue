@@ -1,5 +1,5 @@
 <template>
-<!--    递归显示导航菜单-->
+    <!--    递归显示导航菜单-->
     <div v-for="(item) in routerArray" :key="item.path">
         <!--只有一级菜单-->
         <el-menu-item v-if="!item.children && item.isShow" :index="item.path">
@@ -22,16 +22,17 @@
 
 <script>
     import {reactive, onBeforeMount, toRefs} from 'vue'
+
     export default {
         name: "sidebar",
         props: {
-            routerList:{
-                type:Array,
+            routerList: {
+                type: Array,
             },
         },
         setup(props) {
             const data = reactive({
-                routerArray:props.routerList
+                routerArray: props.routerList
             });
             onBeforeMount(() => {
 

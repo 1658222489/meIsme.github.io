@@ -1,5 +1,4 @@
 const path = require('path');
-
 const resolve = dir => {
     return path.join(__dirname, dir)
 };
@@ -13,9 +12,8 @@ const resolve = dir => {
  *这样打出来的包可以被部署在任意路径，也可以用在类似 Cordova hybrid 应用的文件系统中。
  */
 const PUBLIC_PATH = process.env.NODE_ENV === 'production' ? '/' : '/';
-
 /**
- * 自动引入全局的less变量
+ * 引入全局的less文件
  * @param {*} rule
  */
 const addStyleResource = (rule) => {
@@ -53,6 +51,5 @@ module.exports = {
                 javascriptEnabled: true
             }
         }
-    },
-
+    }
 };

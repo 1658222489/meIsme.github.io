@@ -1,10 +1,10 @@
 <template>
     <div class="headerMain">
         <el-breadcrumb separator-class="el-icon-arrow-right">
-            <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+            <el-breadcrumb-item :to="{ path: '/' }"><span class="fontColor">首页</span></el-breadcrumb-item>
             <template v-for="(item,index) in route.matched" :key="index">
-                <el-breadcrumb-item :to="item.path" v-if="item.name !== '首页'">
-                    {{item.name}}
+                <el-breadcrumb-item :to="item.breadcrumb ? item.path : ''" v-if="item.name !== '首页'">
+                   <span class="fontColor"> {{item.name}}</span>
                 </el-breadcrumb-item>
             </template>
         </el-breadcrumb>
@@ -25,7 +25,6 @@
             onBeforeMount(() => {
 
             });
-
             return {
                 ...toRefs(data)
             };
@@ -42,6 +41,9 @@
             height: 50px;
             background-color: cadetblue;
             border-radius: 50%;
+        }
+        .fontColor{
+            color: #FFFFFF;
         }
     }
 </style>
