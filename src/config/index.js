@@ -3,7 +3,7 @@ export default {
     /**
      * @description 配置显示在浏览器标签的title
      */
-    title: '测试',
+    // title: '测试',
 
   /**
    * @description api请求基础路径
@@ -18,12 +18,3 @@ export default {
    */
   // homeName: 'home',
 }
-
-//配置代理（未完成）
-// module.exports = {
-//     baseUrl: {
-//         dev: 'http://localhost:8080/', // 我的主机
-//
-//         pro: '/'//线上服务器地址
-//     },
-// }

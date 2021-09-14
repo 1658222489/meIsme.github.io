@@ -47,6 +47,7 @@ project
 ---package.json  项目插件文件
 ---vue.config.js 项目配置文件
 
+            文件具体作用请去文件内部了解
 ```
 ###请求数据
 ````
@@ -60,7 +61,7 @@ project
       store.dispatch('userLogin',{name:data.userName,sex:'男'}).then(res => {
           console.log(res);
       })
-    3在src/store/module/XXX.js中:
+    3.在src/store/module/XXX.js中:
         import {login} from "src/api/XXXX";
         在actions中
         userLogin({commit},data){
@@ -79,3 +80,4 @@ project
         })
     }
 ````
+###

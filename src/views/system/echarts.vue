@@ -1,18 +1,20 @@
 <template>
-    <div class="echartsStyle" id="echarts"></div>
+    <div class="echartsStyle" ref="echartsRoot" id="echartsRoot"></div>
 </template>
 
 <script>
-    import {reactive, onMounted, toRefs} from 'vue'
+    import {reactive, onMounted, toRefs,ref} from 'vue'
     import * as echarts from 'echarts';
     export default {
         name: "echarts",
         setup() {
+            const echartsRoot = ref(null);
             const data = reactive({
 
             });
             const myEchart = () => {
-                const chartDom = document.getElementById('echarts');
+                // const chartDom = document.getElementById('echartsRoot');
+                const chartDom = echartsRoot.value;
                 const myChart = echarts.init(chartDom);
                 const option= {
                     xAxis: {
@@ -33,6 +35,7 @@
                 myEchart()
             });
             return {
+                echartsRoot,
                 ...toRefs(data)
             }
         }

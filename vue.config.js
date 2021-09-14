@@ -31,7 +31,7 @@ module.exports = {
     publicPath:PUBLIC_PATH,
     chainWebpack: config => {
         const types = ['vue-modules', 'vue', 'normal-modules', 'normal'];
-        types.forEach(type => addStyleResource(config.module.rule('less').oneOf(type)));
+        types.forEach(type => addStyleResource(config.module.rule('less').oneOf(type)));//轮询加载全局样式
         config.resolve.alias
             //配置@指向src
             .set('@', resolve('src')) // key,value自行定义，比如.set('@@', resolve('src/components'))

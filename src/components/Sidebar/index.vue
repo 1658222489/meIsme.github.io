@@ -34,15 +34,12 @@
                     path:'/home'
                 });
             };
-            const handleOpen = (key, keyPath) => {
-                console.log(key, keyPath);
-            };
+
             onMounted(() => {
 
                 },
             );
             return {
-                handleOpen,
                 gotoHome,
                 ...toRefs(data)
             };
