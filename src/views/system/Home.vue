@@ -8,7 +8,7 @@
 
 <script>
     import {reactive, onMounted, toRefs, watch} from 'vue'
-    import {useStore} from 'vuex';
+    
     import {useRoute} from 'vue-router';
 
     export default {
