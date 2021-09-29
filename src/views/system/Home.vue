@@ -8,7 +8,7 @@
 
 <script>
     import {reactive, onMounted, toRefs, watch} from 'vue'
-    
+    import {useStore} from 'vuex'
     import {useRoute} from 'vue-router';
 
     export default {
@@ -57,6 +57,7 @@
             };
             const addSex = () => {
                 console.log(data);
+                debugger
                 data.person.sex = '男';
                 console.log(data.person);
             };
