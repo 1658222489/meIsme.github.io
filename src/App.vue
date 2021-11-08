@@ -16,5 +16,6 @@
 <style lang="less">
   body{
     margin: 0;
+    overflow: hidden;
   }
 </style>

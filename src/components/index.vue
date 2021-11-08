@@ -37,5 +37,12 @@
         }
     };
 </script>
-<style lang="less" scoped>
+<style lang="less">
+.el-menu {
+  border-right-width: 0;
+}
+main{
+    height: calc(100vh - 60px);
+    overflow: auto;
+}
 </style>

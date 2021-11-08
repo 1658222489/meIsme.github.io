@@ -57,6 +57,8 @@
     height: 60px;
     background-color: cadetblue;
     cursor: pointer;
-
+  }
+  .el-menu {
+    border-right-width: 0;
   }
 </style>

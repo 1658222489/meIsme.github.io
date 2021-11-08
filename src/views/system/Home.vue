@@ -1,6 +1,8 @@
 <template>
     <el-button @click="login">默认按钮</el-button>
-    <el-button @click="sum++">求和</el-button>
+    <hr>
+    <h1>0.1 + 0.2 = {{sum ? sum : '?'}}</h1>
+    <el-button @click="addSum">求和</el-button>
     <h2>{{person}}</h2>
     <el-button @click="addSex">添加性别</el-button>
 
@@ -55,9 +57,11 @@
                     console.log(res);
                 })
             };
+            const addSum = () =>{
+                data.sum = 0.1 + 0.2
+            }
             const addSex = () => {
                 console.log(data);
-                debugger
                 data.person.sex = '男';
                 console.log(data.person);
             };
@@ -71,6 +75,7 @@
                 console.log(oldValue);
             });
             return {
+                addSum,
                 addSex,
                 login,
                 ...toRefs(data)
